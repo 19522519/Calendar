@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment.MonthCalendarFragment"
+    android:background="@drawable/gradient_day_detail"
+    android:id="@+id/month_calendar_fragment"
+    android:clickable="true"
+    android:focusable="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:orientation="vertical">
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="@dimen/margin_top">
+            <ImageButton
+                android:id="@+id/btnToday"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
+                android:adjustViewBounds="true"
+                android:background="#55ffffff"
+                android:scaleType="fitCenter"
+                android:src="@drawable/calendar_today" />
+
+            <TextView
+                android:id="@+id/monthYearTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_corner"
+                android:drawablePadding="5dp"
+                android:text="@string/month_year_solar"
+                android:textColor="@color/black"
+                android:textSize="25sp"
+                app:drawableRightCompat="@drawable/drop_down" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_rectangle"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/margin_top">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="2"
+                    android:textColor="@color/text_color"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="3"
+                    android:textColor="@color/text_color"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="4"
+                    android:textColor="@color/text_color"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="5"
+                    android:textColor="@color/text_color"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="6"
+                    android:textColor="@color/text_color"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="7"
+                    android:textColor="@color/text_color"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="C.N"
+                    android:textColor="@color/red"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/day_in_week_text_size"/>
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/calendarRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutAnimation="@anim/layout_animation"
+                android:layout_marginTop="@dimen/margin_top"
+                android:layout_marginBottom="@dimen/margin_top"/>
+        </LinearLayout>
+
+        <TextView
+            android:background="#55ffffff"
+            android:id="@+id/eventIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/event_in"
+            android:textColor="@color/text_color"
+            android:layout_marginTop="@dimen/margin_top"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eventRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:scrollbars="vertical"/>
+            <ProgressBar
+                android:id="@+id/monthPB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="30dp"
+                android:visibility="invisible"/>
+
+        </RelativeLayout>
+
+
+
+
+
+    </LinearLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/addEventBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="30dp"
+        android:focusable="true"
+        android:tint="@color/white"
+        android:src="@android:drawable/ic_input_add" />
+</RelativeLayout>

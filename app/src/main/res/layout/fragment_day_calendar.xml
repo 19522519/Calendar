@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/dayCalendarFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/wallpaper_pic1"
+    android:orientation="vertical"
+    tools:context=".fragment.DayCalendarFragment"
+    android:clickable="true"
+    android:focusable="true">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageSwitcher
+            android:id="@+id/imgWallpaper"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:id="@+id/dayCalendarContainer">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvMonthYearSolar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/rounded_corner"
+                    android:drawablePadding="5dp"
+                    android:text="@string/month_year_solar"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    app:drawableRightCompat="@drawable/drop_down" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin_top">
+
+                    <ImageButton
+                        android:id="@+id/btnToday"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:adjustViewBounds="true"
+                        android:background="#55ffffff"
+                        android:scaleType="fitCenter"
+                        android:src="@drawable/calendar_today" />
+
+                    <TextView
+                        android:id="@+id/tvDayOfMonthSolar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="@dimen/margin_top"
+                        android:text="@string/day_solar"
+                        android:textColor="@color/black"
+                        android:textSize="90sp" />
+                </FrameLayout>
+
+                <TextView
+                    android:id="@+id/tvDayOfWeek"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/day_of_week"
+                    android:textColor="@color/black"
+                    android:textSize="35sp" />
+
+                <TextView
+                    android:layout_marginStart="5dp"
+                    android:layout_marginEnd="5dp"
+                    android:id="@+id/tvMaxim"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="@string/maxim"
+                    android:textColor="@color/black"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <TableLayout
+                android:id="@+id/tableLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="#55FFFFFF"
+                android:orientation="horizontal"
+                android:stretchColumns="0,2">
+
+                <TableRow
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp">
+
+                    <LinearLayout
+                        android:layout_width="40dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="0"
+                        android:orientation="vertical">
+
+                        <DigitalClock
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:text="@string/time"
+                            android:textColor="@color/black"
+                            android:textSize="30sp" />
+
+                        <ImageView
+                            android:id="@+id/imgIsGoodTime"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="80dp"
+                            android:layout_height="15dp"
+                            android:layout_gravity="center"
+                            android:scaleType="fitCenter"
+                            android:src="@mipmap/yin_yang_red"/>
+
+                        <TextView
+                            android:id="@+id/tvTimeLunar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/time_solar"
+                            android:textColor="@color/black"
+                            android:textSize="17sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_column="1"
+                        android:orientation="vertical">
+
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <ImageView
+                                android:id="@+id/imgIsGoodDay"
+                                android:layout_width="30dp"
+                                android:layout_height="15dp"
+                                android:layout_gravity="right"
+                                android:scaleType="fitCenter"
+                                android:src="@mipmap/yin_yang_black" />
+
+                            <TextView
+                                android:id="@+id/tvDayOfMonthLunar"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:gravity="center"
+                                android:text="@string/day_lunar"
+                                android:textColor="@color/black"
+                                android:textSize="60sp" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:id="@+id/tvMonthLunar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/month_lunar"
+                            android:textColor="@color/black"
+                            android:textSize="21sp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:layout_column="2"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvStrDayLunar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="@string/str_day_lunar"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvStrMonthLunar"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"
+                            android:gravity="center"
+                            android:text="@string/str_month_lunar"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+
+                        <TextView
+                            android:id="@+id/tvStrYearLunar"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="@string/str_year_lunar"
+                            android:textColor="@color/black"
+                            android:textSize="15sp" />
+                    </LinearLayout>
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+    </FrameLayout>
+
+</LinearLayout>

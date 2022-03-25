@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.OnlineEvent"
+    android:background="@color/gray_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/userName"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:textSize="20dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="3.5"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/purple_200"
+            android:text="Đăng xuất"
+            android:onClick="LogOutOnClick"/>
+
+    </LinearLayout>
+    <View
+        android:id="@+id/divider2"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/ContentET"
+            android:background="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:hint="Nội dung"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:src="@drawable/pen_icon"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <Switch
+        android:id="@+id/AllDaySW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Cả ngày"
+        android:textSize="30dp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:onClick="dateOnClick">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:text="Ngày:"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            />
+        <TextView
+            android:id="@+id/DateStart"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:text="15/05/2021 >"
+            android:gravity="right"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:id="@+id/timeStartLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:onClick="timeStartOnClick">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Thời điểm bắt đầu:"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/TimeStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="00:00 >"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/timeEndLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:onClick="TimeEndOnClick">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Thời điểm kết thúc:"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/TimeEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="00:00 >"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/save2Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lưu"
+            android:textSize="20dp"
+            android:backgroundTint="@color/purple_200"
+            android:visibility="invisible"
+            android:onClick="save2OnClick"
+            />
+        <Button
+            android:id="@+id/save1Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lưu"
+            android:textSize="20dp"
+            android:backgroundTint="@color/purple_200"
+            android:onClick="Save1OnClick"
+            />
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:text="Xóa"
+            android:visibility="invisible"
+            android:backgroundTint="@color/purple_200"
+            android:onClick="deleteOnClick"/>
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/OnlineProgress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:visibility="invisible"/>
+
+
+</LinearLayout>

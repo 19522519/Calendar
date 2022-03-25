@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.AddEvent"
+    android:background="@color/gray_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintLeft_toRightOf="parent"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        >
+        <TextView
+            android:id="@+id/titleTV"
+            android:layout_width="0dp"
+            android:layout_weight="6"
+            android:textSize="30dp"
+            android:text="Thêm sự kiện"
+            android:background="@color/colorPrimary"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            />
+
+    </LinearLayout>
+    <View
+        android:id="@+id/divider2"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <EditText
+            android:id="@+id/contentET"
+            android:background="@color/white"
+            android:layout_width="0dp"
+            android:layout_weight="9"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:hint="Nội dung"
+            />
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:src="@drawable/pen_icon"/>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/divider3"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <Switch
+        android:id="@+id/AllDaySW"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="Cả ngày"
+        android:textSize="30sp" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/white"
+        android:onClick="dateOnClick">
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:text="Ngày:"
+            android:textSize="30dp"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            />
+        <TextView
+            android:id="@+id/datepickerTV"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="9"
+            android:text="15/05/2021 >"
+            android:gravity="right"
+            android:textSize="30dp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="?android:attr/listDivider" />
+    <LinearLayout
+        android:id="@+id/startLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:onClick="startOnClick">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Thời điểm bắt đầu:"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/startTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="00:00"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/endLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/white"
+            android:onClick="endOnClick">
+            <TextView
+                android:layout_width="0sp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Thời điểm kết thúc:"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="00:00"
+                android:textSize="30dp"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="?android:attr/listDivider" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/save2Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lưu"
+            android:textSize="20dp"
+            android:backgroundTint="@color/purple_200"
+            android:onClick="saveOnClick"
+            android:visibility="invisible"
+            />
+        <Button
+            android:id="@+id/save1Btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Lưu"
+            android:textSize="20dp"
+            android:backgroundTint="@color/purple_200"
+            android:onClick="saveOnClick"
+            />
+        <Button
+            android:id="@+id/deleteBtn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="20dp"
+            android:text="Xóa"
+            android:visibility="invisible"
+            android:onClick="deleteOnClick"
+            android:backgroundTint="@color/purple_200" />
+    </LinearLayout>
+    <ProgressBar
+        android:id="@+id/OnlineProgress"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:visibility="invisible"/>
+
+
+</LinearLayout>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context=".fragment.PrayerContentFragment"
+    android:clickable="true"
+    android:focusable="true">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#5E72BC"
+        android:id="@+id/title">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="VĂN KHẤN"
+            android:gravity="center_horizontal"
+            android:textSize="30dp"
+            android:textColor="@color/white"
+            android:paddingTop="4dp"
+            android:paddingBottom="2dp"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textview"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:scrollbars="vertical"
+        android:textSize="15sp"
+        android:layout_below="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</RelativeLayout>
